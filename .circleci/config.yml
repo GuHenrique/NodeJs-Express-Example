@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: cd src && npm install
       - run: cd src && npm test
-      - run: cd src && npm eslint
+      - run: cd src && npm run eslint
 
 workflows:
   version: 1
