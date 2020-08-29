@@ -104,7 +104,7 @@ function makeLog(level, marker, date, message) {
 
     insertDatabase(level, marker, date, message);
 
-};
+}
 
 let Hermodr = {};
 

@@ -1,7 +1,6 @@
 # NodeJs-Express-Example
 Scheme to facilitate the start of nodeJS projects with express
 
-
 ### Dependencies and technologies used
 
 #### Technologies
@@ -9,16 +8,18 @@ Scheme to facilitate the start of nodeJS projects with express
 - MongoDB
 
 #### Dependencies
-- express: ^4.17.1 (**for sample only**)
+- express: ^4.17.1
 - mongoose:^5.9.7
 - jest: ^26.4.2
+- eslint: ^7.7.0
 
 #### What's in the project:
 - Hermod-logger (for Express)
 - Integration with CircleCI
+- EsLint
+- Unit Tests with Jest
 
 
 #### What remains to be done:
 - sonarqube
-- esLint
 - Docker

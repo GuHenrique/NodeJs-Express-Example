@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const mongodb = require('./config/mongodb');
+require('./config/mongodb');
 
 const { Hermodr, HermodrRoutes} = require('./shared/sources/hermodr-cmd-express');
 

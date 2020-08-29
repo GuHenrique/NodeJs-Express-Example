@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
+    "linter": "./node_modules/.bin/eslint .",
     "start": "node server.js"
   },
   "author": "",
@@ -12,5 +13,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "jest": "^26.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0"
   }
 }
