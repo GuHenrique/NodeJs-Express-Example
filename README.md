@@ -9,7 +9,7 @@ Scheme to facilitate the start of nodeJS projects with express
 
 #### Dependencies
 - express: ^4.17.1
-- mongoose:^5.9.7
+- mongoose:^5.10.2
 - jest: ^26.4.2
 - eslint: ^7.7.0
 
