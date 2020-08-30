@@ -14,7 +14,6 @@ jobs:
       - save_cache:
           key: {{ checksum  "package.json" }}
           paths:
-            - cache.txt
             - NodeJs-Express-Example/src/node_modules
       #- run: cd src && npm test
       #- run: cd src && npm run eslint
