@@ -8,14 +8,27 @@ jobs:
     docker:
       - image: circleci/node:12.18
 
-    working_directory: ~/repo/src
     steps:
       - checkout
-      - run: pwd
-      - run: npm install
-      #- run: cd src && npm install
+      - run: cd src && npm install
+      - save_cache:
+          key: my-cache
+          paths:
+            - cache.txt
+            - NodeJs-Express-Example/src
       #- run: cd src && npm test
       #- run: cd src && npm run eslint
+
+  test:
+    docker:
+      - image: circleci/node:12.18
+
+    steps:
+      - restore_cache:
+          keys: my-cache   
+      - run: cd src && npm test
+      - run: cd src && npm run eslint
+
 
 workflows:
   version: 1
