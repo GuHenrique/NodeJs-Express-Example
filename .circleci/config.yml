@@ -8,9 +8,9 @@ jobs:
     docker:
       - image: circleci/node:12.18
 
+    working_directory: ~/repo/src
     steps:
       - checkout
-      - working_directory: ~/repo/src
       - run: pwd
       - run: npm install
       #- run: cd src && npm install
