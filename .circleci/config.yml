@@ -31,12 +31,11 @@ jobs:
       - run: cd src && npm test
       - run: cd src && npm run eslint
 
-
 workflows:
-  version: 1
+  version: 2
   all_jobs:
     jobs:
       - build
       - test:
-        requires:
-          - build
+          requires:
+            - build
