@@ -24,8 +24,7 @@ jobs:
       - image: circleci/node:12.18
 
     steps:
-      - restore_cache:
-          keys: my-cache   
+      - run: cd src && npm install
       - run: cd src && npm test
       - run: cd src && npm run eslint
 
@@ -34,6 +33,5 @@ workflows:
   version: 1
   all_jobs:
       jobs:
-          - test:
-            requires:
-              - build
+          - build
+          - test
