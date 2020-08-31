@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: cd src && npm install
       - save_cache:
-          key: myapp-{{ checksum  "package.json" }}
+          key: myapp-{{ checksum  "/src/package.json" }}
           paths:
             - NodeJs-Express-Example/src/node_modules
       #- run: cd src && npm test
