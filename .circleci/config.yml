@@ -11,6 +11,7 @@ jobs:
     steps:
       - checkout
       - run: cd src && npm install
+      - run: dir 
       - save_cache:
           key: myapp-{{ checksum  "/src/package.json" }}
           paths:
