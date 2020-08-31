@@ -5,9 +5,11 @@ require('./config/mongodb');
 
 const { Hermodr, HermodrRoutes} = require('./shared/sources/hermodr-cmd-express');
 
+const systemInfo = require("./shared/routes/systemInfo");
 
 app.use(express.json());
 app.use(HermodrRoutes);
+app.use(systemInfo);
 
 
 app.listen(3333)
