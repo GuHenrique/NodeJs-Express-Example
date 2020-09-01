@@ -9,11 +9,11 @@ routes.get('/status', async (req, res) => {
 
     var status = {};
 
-    status.name = "NAME SERVER HOW IDNK"
+    status.name = 'NAME SERVER HOW IDNK'
     status.aliveAtms = process.uptime();
     status.date = formattedDateTime(new Date());
     status.nodeSourceUrl = process.release.sourceUrl;
-    status.nodeCodename = proce.release.name;
+    status.nodeCodename = process.release.lts;
 
     return res.json(status);
 });
