@@ -6,7 +6,7 @@ app.use(express.json());
 const { HermodrRoutes} = require("../shared/sources/hermodr-cmd-express");
 const systemInfo = require("../shared/routes/systemInfo");
 
-
+// static sample ====> app.use('/static', express.static('src/app/public'));
 app.use(HermodrRoutes);
 app.use(systemInfo);
 
