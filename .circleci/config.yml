@@ -11,30 +11,11 @@ jobs:
     steps:
       - checkout
       - run: cd src && npm install
-      - run: dir 
-      - save_cache:
-          key: myapp-{{ checksum  "/src/package.json" }}
-          paths:
-            - NodeJs-Express-Example/src/node_modules
-      #- run: cd src && npm test
-      #- run: cd src && npm run eslint
-
-  test:
-    docker:
-      - image: circleci/node:12.18
-
-    steps:
-      - checkout
-      - restore_cache:
-          keys: myapp-{ checksum  "/src/package.json" }}
       - run: cd src && npm test
       - run: cd src && npm run eslint
 
 workflows:
-  version: 2
+  version: 1
   all_jobs:
     jobs:
       - build
-      - test:
-          requires:
-            - build
