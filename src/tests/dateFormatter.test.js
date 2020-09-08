@@ -2,7 +2,8 @@ const {
     formattedDateTime,
     formattedDate,
     getMonthPeriod,
-    addTimeToTheDate
+    addTimeToTheDate,
+    aliveAtBySeconds
 } = require('../shared/sources/dateFormatter');
 
 
@@ -27,7 +28,9 @@ describe("Date Formatter tests", () => {
         expect(addTimeToTheDate(new Date('2020-08-25 '), 2, 3, 5)).toStrictEqual(new Date('2025-11-27 00:00:00'));
     });
 
-   
+    it('Alive At formatter', () => {
+        expect(aliveAtBySeconds(121.7163551)).toBe("Alive at 0 days 0 hours 2 minutes 2 seconds");
+    });
 })
 
 
