@@ -1,4 +1,6 @@
 # NodeJs-Express-Example
+[![](https://circleci.com/gh/GuHenrique/NodeJs-Express-Example.svg?style=svg)](https://app.circleci.com/pipelines/github/GuHenrique/NodeJs-Express-Example)
+
 Scheme to facilitate the start of nodeJS projects with express
 
 ### Dependencies and technologies used
