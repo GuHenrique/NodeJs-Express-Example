@@ -17,5 +17,5 @@ jobs:
 workflows:
   version: 1
   all_jobs:
-      jobs:
-          - build
+    jobs:
+      - build
