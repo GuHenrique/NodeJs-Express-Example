@@ -86,10 +86,25 @@ function addTimeToTheDate(date, d, m, y) {
   return date;
 }
 
+function aliveAtBySeconds(seconds){
+
+  var days = (seconds / (60 * 60 * 24)).toFixed(0);
+  var hoursRemainder = (seconds % (60 * 60 * 24)).toFixed(0);
+
+  var hours = (hoursRemainder / (60 * 60)).toFixed(0);
+  var minutesRemainder = (hoursRemainder % (60 * 60)).toFixed(0);
+
+  var minutes = (minutesRemainder / 60).toFixed(0);
+  var secondsRemainder = (minutesRemainder % 60).toFixed(0);
+  
+  return `Alive at ${days} days ${hours} hours ${minutes} minutes ${secondsRemainder} seconds`;
+}
+
 
 module.exports = {
   formattedDateTime: formattedDateTime,
   formattedDate: formattedDate,
   getMonthPeriod: getMonthPeriod,
-  addTimeToTheDate: addTimeToTheDate
-}
+  addTimeToTheDate: addTimeToTheDate,
+  aliveAtBySeconds: aliveAtBySeconds
+};

@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const { e404, e500 } = require("../shared/routes/errors");
 
 app.use(express.json());
 
@@ -10,5 +11,8 @@ const systemInfo = require("../shared/routes/systemInfo");
 app.use(HermodrRoutes);
 app.use(systemInfo);
 
+// always set up errors at the end
+app.use(e404);
+app.use(e500);
 
 module.exports = app;
