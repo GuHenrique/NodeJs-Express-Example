@@ -10,9 +10,9 @@ jobs:
 
     steps:
       - checkout
-      - run: cd src && npm install
-      - run: cd src && npm test
-      - run: cd src && npm run eslint
+      - run: npm install
+      - run: npm test
+      - run: npm run eslint
 
 workflows:
   version: 1
