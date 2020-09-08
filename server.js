@@ -1,8 +1,8 @@
-const app = require('./config/express')
+const app = require('./src/config/express')
 
-require("./config/mongodb");
+require("./src/config/mongodb");
 
-const { Hermodr } = require("./shared/sources/hermodr-cmd-express");
+const { Hermodr } = require("./src/shared/sources/hermodr-cmd-express");
 
 app.listen(3333)
 Hermodr.log("server.js", "Server listening in 3333")
