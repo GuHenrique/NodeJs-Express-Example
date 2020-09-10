@@ -1,6 +1,6 @@
-const app = require('./src/config/express')
+const app = require('./src/configs/express')
 
-require("./src/config/mongodb");
+require("./src/configs/mongodb");
 
 const { Hermodr } = require("./src/shared/sources/hermodr-cmd-express");
 
