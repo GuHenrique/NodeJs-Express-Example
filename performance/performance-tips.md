@@ -58,27 +58,27 @@ If automation is required, [ImageMagick](https://github.com/twolfson/gulp.sprite
 
 #### SVG-Sprites
 
-to automate the creation of svg-sprites you can use the module https://github.com/jkphl/svg-sprite (follow the settings to be able to use)
+	to automate the creation of svg-sprites you can use the module https://github.com/jkphl/svg-sprite (follow the settings to be able to use)
 
 
-svg-sprites example:
+	svg-sprites example:
 
-```	
-	<svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
-		<defs>
-			<symbol id="mobile" viewBox="0 0 22 33">
-				<path d="M17.612 29.584H3.604c-.384 0-.662-.304-.662-.76v-5.51h15.332v5.51c0 .456-.278.76-.662.76zM3.604 2.942h14.008c.384 0 .662.29.662.654v17.396H2.942V3.596c0-.364.278-.654.662-.654zm17.613.697A3.64 3.64 0 0 0 17.577 0H3.64A3.64 3.64 0 0 0 0 3.64v25.24a3.64 3.64 0 0 0 3.64 3.64h13.937a3.64 3.64 0 0 0 3.64-3.64V3.64zM10.837 25h-.175C9.744 25 9 25.783 9 26.75s.744 1.75 1.662 1.75h.175c.92 0 1.663-.783 1.663-1.75S11.756 25 10.837 25"/>
-			</symbol>
-		</defs>
-	</svg>
-```
-  
+	```	
+		<svg width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<defs>
+				<symbol id="mobile" viewBox="0 0 22 33">
+					<path d="M17.612 29.584H3.604c-.384 0-.662-.304-.662-.76v-5.51h15.332v5.51c0 .456-.278.76-.662.76zM3.604 2.942h14.008c.384 0 .662.29.662.654v17.396H2.942V3.596c0-.364.278-.654.662-.654zm17.613.697A3.64 3.64 0 0 0 17.577 0H3.64A3.64 3.64 0 0 0 0 3.64v25.24a3.64 3.64 0 0 0 3.64 3.64h13.937a3.64 3.64 0 0 0 3.64-3.64V3.64zM10.837 25h-.175C9.744 25 9 25.783 9 26.75s.744 1.75 1.662 1.75h.175c.92 0 1.663-.783 1.663-1.75S11.756 25 10.837 25"/>
+				</symbol>
+			</defs>
+		</svg>
+	```
+	
 
-example of how to use in HTML:
-```
-	<svg class="categoriaCard-item-icone"><use xlink:href="assets/img/categorias.svg#mobile"/></svg>
-```
-  
+	example of how to use in HTML:
+	```
+		<svg class="categoriaCard-item-icone"><use xlink:href="assets/img/categorias.svg#mobile"/></svg>
+	```
+	
 
 ### Inline resources
 
@@ -104,3 +104,20 @@ Make a new hostname (different server) to be able to help with the limitation an
 - JS files must be placed at the end of the Body tag (before closing the tag)
 
 ![critical-render-path](critical_rendering_path.png)
+
+
+### Asynchronous
+
+- use Asynchronous tag
+- use setTimeout
+- use requestAnimationFrame (for animation)
+- use requestIdleCallback (runs only when the browser is idle)
+
+#### Async attribute
+	if JS does not depend on others, ASYNC can be used to make this request without disturbing the others. So, you can put back the scripts that are necessary for the initial part of the page in HEADER (ex: menuJS) and continue at the end of BODY with the others (ex: footerJS)
+
+	Example of the ASYNC script tag: `` `<script async src =" assets / js / menu.js "> </script>` ``
+	Gulp-useref also has the ASYNC option
+
+#### setTimeout 
+	Você pode usar a o setTimeout para adiar a execução de alguns JS que não são tão importantes para o site no inicio da execução, assim vai existir menos tarefas para o processador executar e podendo travar menos o site. 
