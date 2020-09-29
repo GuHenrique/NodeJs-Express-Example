@@ -115,8 +115,31 @@ try to leave the size of the HTML index with a maximum of 14KB gzipped, includin
 ### Async attribute
 if JS does not depend on others, ASYNC can be used to make this request without disturbing the others. So, you can put back the scripts that are necessary for the initial part of the page in HEADER (ex: menuJS) and continue at the end of BODY with the others (ex: footerJS)
 
-Example of the ASYNC script tag: `` `<script async src =" assets / js / menu.js "> </script>` ``
+Example of the ASYNC script tag: ```<script async src =" assets / js / menu.js "> </script>```
 Gulp-useref also has the ASYNC option
 
 ### setTimeout 
 You can use setTimeout to postpone the execution of some JS that are not so important for the website at the beginning of the execution, so there will be fewer tasks for the processor to execute and it may cause the website to crash less.
+
+Example: ```setTimeout(function(){ /*...YOU_FCODE...*/ }, 1000);```
+
+Essa estrategia também pode ser usada para carregamento de videos. (Ex: colocar o iFrame no HTML depois de 1.5s)
+
+## Lazy Load
+
+Lazy Load helps make requests for images only when the user scrolls down.
+other example with window resize https://gist.github.com/sergiolopes/e326e62a44c8095021d443401dcf5320
+Example: 
+```
+	window.onscroll = function(){
+
+		var imgs = document.querySelectorAll('img[data-src]:not([src])');
+
+		for (var i = 0; i < imgs.length; i++) { // Error with forEach
+
+			if(imgs[i].getBoundingClientRect().top < window.innerHeight + 200){
+				imgs[i].src = imgs[i].getAttribute('data-src');
+			}
+		}
+	}
+```
