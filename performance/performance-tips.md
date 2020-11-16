@@ -23,11 +23,11 @@
 
 - Resize the images to the size that will be used (Ex: From 1000x1000 to 50x50)
 
-[Online Lossless Optimization - Kraken](https://kraken.io/)
-[Online Lossless Optimization - Tiny](https://tinypng.com/)
-[Offline lossless optimization - ImageOptim](https://imageoptim.com/mac)
-[Offline lossless optimization - RIOT](https://riot-optimizer.com/)
-[Lossless CMD optimization - JpegTran](https://jpegclub.org/jpegtran/)
+- [Online Lossless Optimization - Kraken](https://kraken.io/)
+- [Online Lossless Optimization - Tiny](https://tinypng.com/)
+- [Offline lossless optimization - ImageOptim](https://imageoptim.com/mac)
+- [Offline lossless optimization - RIOT](https://riot-optimizer.com/)
+- [Lossless CMD optimization - JpegTran](https://jpegclub.org/jpegtran/)
 
 - Other Tools:
 	- PngCrush
@@ -143,3 +143,18 @@ Example:
 		}
 	}
 ```
+
+Reminder: Take into account the slow technology
+
+### CSS Assync
+ 
+ ````
+	<style> YOUR_CSS </style>
+
+	<link rel="preload" as="style" href="YOUR.CSS" onload="this.rel='stylesheet'">
+	<noscript><link rel="sylesheet" href="YOUR.CSS"></noscript>
+
+	<script> src="loadcss.js"</script>
+	<script> src="cssrelpreload.js"</script>
+
+ ```
